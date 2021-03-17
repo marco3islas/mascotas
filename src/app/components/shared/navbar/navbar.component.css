@@ -1,0 +1,20 @@
+.contenedorLogo{
+    width: 100%;
+    margin: 5px 0;
+    justify-content: center;
+    display: flex;
+}
+.contenedorLogo .logo{
+    width: 250px;
+}
+.container-fluid, .navbar{
+    background-color: #121360;
+}
+.navbar .navbar-nav{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+ }
+.navbar li a{
+    color: white;
+}

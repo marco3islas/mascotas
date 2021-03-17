@@ -1,0 +1,65 @@
+  <!-- Carousel -->
+  <div id="carouselExampleIndicators" class="carousel slide my-5" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="../../../assets/img/joe-hepburn-VH9girci2o4-unsplash.jpg"class="d-block imgWidth" alt="Perro blanco con mirada triste">
+    </div>
+    <div class="carousel-item">
+        <img src="../../../assets/img/bird-4887736_640.jpg" class="d-block imgWidth" alt="Las guacamayas son unas de las aves con plumaje mas colorido">
+    </div>
+    <div class="carousel-item">
+        <img src="../../../assets/img/marcin-czerniawski-sxvy7ep2n9E-unsplash.jpg" class="d-block imgWidth" alt="Pez amarillo">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  <!-- entradas recientes -->
+<div class="container container-fluid">
+  <div class="headerCards">
+  <div class="card" style="width: 220px;" *ngFor="let mascota of mascotas">
+  <img [src]="mascota.imagen" class="card-img-top" [alt]="mascota.titulo">
+  <div class="card-body">
+    <h5 class="card-title">{{mascota.titulo}}</h5>
+    <p class="card-text">{{mascota.descripcion}}</p>
+    <a href="#" class="btn btn-warning">LEER MAS</a>
+  </div>
+</div>
+  </div>
+  <!-- articulo -->
+  <div class="grid">
+    <article>
+      <div class="medCard">
+        <img src="../../../assets/img/dogs-1246588_1280.jpg" alt="">
+        <div class="bodyMedcard">
+          <h5>TITULO DEL ARTICULO</h5>
+          <p>Sit vel corrupti cumque cumque enim Voluptas perspiciatis voluptas voluptate atque sint, quaerat quibusdam nisi? Reprehenderit ad itaque est doloremque.
+          </p>
+          <a href="#" class="btn btn-warning">LEER MAS</a>
+        </div>
+      </div>
+    </article>
+    <aside class="side-right">
+      <div class="entrada" *ngFor=" let entrada of entradas ">
+        <div class="entradaBody">
+          <img class="thumbnail" [src]="entrada.imagen" [alt]="entrada.titulo">
+          <div class="textos">
+            <h6 class="titulo">{{ entrada.titulo }} <span>{{ entrada.subtitulo }}</span></h6>
+          <p>Elit iste dolorum eius dolores veritatis! Ducimus</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
