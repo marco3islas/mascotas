@@ -1,0 +1,11 @@
+.comentarios{
+    max-width: 400px;
+    width: 100%;
+}
+.container form textarea{
+    width: 100%;
+    border: 1px solid #ced4da;
+}
+.container  form .form-group{
+    margin: 40px 0;
+}

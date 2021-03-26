@@ -1,0 +1,36 @@
+h2{
+    margin: 40px 0;
+}
+.nosotros{
+    display: flex;
+    justify-content: space-around;
+}
+.quienesSomos{
+    display: flex;
+}
+article .porQueNosotros, article .habilidades{
+    width: 48%;
+}
+.quienesSomos h3{
+    margin: 10px 0;
+    width: 500px;
+}
+
+article .imagen{
+    width: 50%;
+}
+article img{
+    width: 100%;
+    max-width: 500px;
+    border: 3px solid black;
+}
+
+article .texto{
+    width: 50%;
+}
+article .porQueNosotros .texto{
+    width: 90%;
+}
+.habilidades ul{
+    list-style: none;
+}

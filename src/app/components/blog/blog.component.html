@@ -1,0 +1,19 @@
+<div class="entrada" *ngFor="let blogData of blog; let i = index">
+  <div class="entradaHeader">
+    <h2 class="titulo">{{ blogData.titulo }} </h2>
+    <div class="datos"> Publicado por: <strong>{{blogData.autor}}</strong> , Fecha: <strong>05/02/21</strong> , Con <i>5 Comentarios</i></div>
+  </div>
+  <div class="entradaBody">
+    <div class="imagen">
+      <img [src]="blogData.imagen" alt="blogData.titulo"/>
+    </div>
+    <div class="parrafo">
+      Sit illo expedita laudantium iusto similique. Itaque nisi excepturi vel deserunt commodi rerum Cumque at quasi velit voluptatibus vitae asperiores fugiat. Necessitatibus iusto earum minus praesentium incidunt? Excepturi minima ipsam totam fugit laudantium expedita at animi, ratione. Quas distinctio aut exercitationem architecto veritatis Ad voluptates illum sint delectus soluta hic.
+      <!--a [routerLink]="['/articulo', i]" class="boton btn btn-primary">Leer mas...</a-->
+      <button (click)="verArticulo(i)" class="boton btn btn-primary">Leer mas...</button>
+      
+    </div>
+  </div>
+    <hr>
+    
+</div>

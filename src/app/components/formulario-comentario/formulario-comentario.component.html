@@ -1,0 +1,73 @@
+<div class="container container-fluid">
+<form autocomplete='off' class='comentarios' [formGroup]='forma' (ngSubmit)="submit()">
+  <h2>Deja un comentario...</h2>
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input  type="text"  
+            name = 'nombre'
+            id="nombre"
+            aria-describedby="nombre"
+            class='form-control'
+            [class.is-invalid]='nombreNoValido'
+            formControlName="nombre">
+    <br>
+    <small *ngIf='nombreNoValido' class='alert alert-danger mt-5'>Ingresa un nombre con al menos 5 letras</small>
+  </div>
+  <div class="form-group">
+    <label for="email">Correo electronico</label>
+    <input 
+    type="email"
+    class="form-control"
+    name='email'
+    id="email" 
+    aria-describedby="emailHelp"
+    formControlName="email"
+    [class.is-invalid]='correoNoValido'
+    >
+    <br>
+    <small *ngIf='correoNoValido' class='alert alert-danger mt-5'>Ingresa un correo valido</small>
+  </div>
+  <div class="form-group">
+    <label for="url">Website</label>
+    <input 
+    type="text"  
+    name='url'
+    class="form-control"
+    formControlName="url"
+    [class.is-invalid]='urlNoValido'
+    id="url">
+    <br>
+    <small *ngIf='urlNoValido' class='alert alert-danger mt-5'>Ingresa una URL valida</small>
+    
+  </div>
+  <div class="form-group">
+    <label for="comentario">Comentario</label>
+    <br>
+    
+    <textarea id="comentario" 
+              class='form-control'
+              name="comentario"
+              cols="30"
+              rows="10"
+              formControlName="comentario"
+              [class.is-invalid]='comentarioNoValido'
+              ></textarea>
+    <br>
+    <small *ngIf='comentarioNoValido' class='alert alert-danger mt-5'>Ingresa al menos 5 letras </small>
+  </div>
+  <button type="submit" class="btn btn-primary">ENVIAR</button>
+</form>
+</div>
+
+<hr>
+
+<pre>
+  Estado del formaulario: {{ forma.valid }}
+  <br>
+  status: {{ forma.status }}
+</pre>
+<pre>
+  {{ forma.value | json }}
+</pre>
+
+

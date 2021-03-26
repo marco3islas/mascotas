@@ -1,0 +1,12 @@
+<div class="container container-fluid">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card" *ngFor="let galeria of galeria">
+    <img class="card-img-top" [src]="galeria.imagen" [alt]="galeria.titulo">
+    <div class="card-body">
+      <h5 class="card-title">{{ galeria.titulo }}</h5>
+    </div>
+    <!-- Card flip -->
+  </div>
+</div>
+</div>
