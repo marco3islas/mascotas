@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 import {Entradas, EntradasService} from 'src/app/services/entradas.service';
 import {Mascotas, MascotasService} from 'src/app/services/mascotas.service';
 
@@ -13,7 +14,8 @@ export class HomeComponent implements OnInit {
     entradas: Entradas[] = [];
 
   constructor( private mascotaService: MascotasService,
-               private entradasService: EntradasService
+               private entradasService: EntradasService,
+               private router: Router
                ) { }
 
   ngOnInit(): void {
@@ -24,5 +26,8 @@ export class HomeComponent implements OnInit {
       this.entradas = this.entradasService.getEntradas();
       console.log(this.entradas);
   }
+    verArticulo(idx: number){
+      this.router.navigate(['/articulo', idx]);
+    }
 
 }

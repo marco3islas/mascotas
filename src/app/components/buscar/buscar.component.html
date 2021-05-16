@@ -1,0 +1,15 @@
+<div class=" animated fadeIn container container-fluid">
+  <h3 class="display-4">Buscar {{ termino | uppercase }} </h3>
+  <hr>
+  <div class="alert alert-danger" *ngIf='mascota.length == 0'> No existe el termino: {{ termino }} en esta base de datos</div>
+<div class=" animated fadeIn fast jumbotron jumbotron-fluid animated fadeIn fast" *ngFor="let mascota of mascota; let i = index">
+  
+  <img [src]=" mascota.imagen " class='rounded imagen' alt="{{ mascota.titulo }}">
+  <p class="lead animated animated fadeIn"> {{ mascota.descripcion }}</p>
+  <hr class="my-4">
+  <p>{{ mascota.titulo }}</p>
+  <p class="lead animated fadeIn fast">
+    <a class="btn btn-primary btn-block" routerLink="/blog" role="button">Regresar</a>
+  </p>
+</div>
+</div>

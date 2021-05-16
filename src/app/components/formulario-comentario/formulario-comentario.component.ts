@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
+import {ValidadoresService} from 'src/app/services/validadores.service';
 
 @Component({
   selector: 'app-formulario-comentario',
@@ -11,8 +12,10 @@ export class FormularioComentarioComponent implements OnInit {
     forma: FormGroup;
 
 
-  constructor( private formBuilder: FormBuilder) {
+  constructor( private formBuilder: FormBuilder,
+               private validadores: ValidadoresService) {
       this.crearFormulario();
+      this.cargarDataAlFormulario();
   }
 
   ngOnInit(): void {
@@ -31,15 +34,39 @@ export class FormularioComentarioComponent implements OnInit {
         return this.forma.get('comentario').invalid && this.forma.get('comentario').touched;
     }
 
+    get pasatiempos(){
+        return this.forma.get('pasatiempos') as FormArray;
+    }
+
     crearFormulario(){
 
         this.forma = this.formBuilder.group({
-            nombre: ['', [ Validators.required, Validators.minLength(5)]],
+            nombre: ['', [ Validators.required, Validators.minLength(5), this.validadores.noHerrera]],
             email : ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
             url   : ['', [Validators.pattern('^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$')]],
             comentario   : ['', [Validators.required, Validators.minLength(5)]],
+            pasatiempos: this.formBuilder.array([
+            ])
         });
 
+    }
+
+    cargarDataAlFormulario(){
+        this.forma.reset({
+            nombre: '', 
+            email: '',
+            url: '',
+            comentario: ''
+
+        });
+    }
+
+    agregarPasatiempo(){
+        this.pasatiempos.push( this.formBuilder.control(''));
+    }
+
+    borrarPasatiempo( i: number ){
+        this.pasatiempos.removeAt(i);
     }
 
     submit(){
@@ -49,7 +76,10 @@ export class FormularioComentarioComponent implements OnInit {
                 control.markAsTouched();
             });
         }
+    /* Posteo y reset de la inforacion */
+        
+        this.forma.reset({
+            nombre: 'Sin nombre'
+        });
     }
-
-
 }

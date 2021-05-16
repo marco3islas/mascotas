@@ -1,15 +1,15 @@
-<div class="container container-fluid">
-<div class="jumbotron jumbotron-fluid animated fadeIn fast">
+<div class=" animated fadeIn container container-fluid">
+<div class=" animated fadeIn fast jumbotron jumbotron-fluid animated fadeIn fast">
   <h1 class="display-4">{{ articulo.titulo }} </h1>
   <img [src]=" articulo.imagen " class='rounded imagen' alt="{{ articulo.titulo }}">
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <p class="lead animated animated fadeIn">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
+  <p class="lead animated fadeIn fast">
     <a class="btn btn-primary btn-block" routerLink="/blog" role="button">Regresar</a>
   </p>
 </div>
 </div>
-<app-comentarios></app-comentarios>
-<app-formulario-comentario></app-formulario-comentario>
+<app-comentarios class='animated fadeIn'></app-comentarios>
+<app-formulario-comentario class='animated fadeIn fast'></app-formulario-comentario>
 

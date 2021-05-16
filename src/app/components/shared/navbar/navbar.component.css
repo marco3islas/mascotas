@@ -10,14 +10,11 @@
 .container-fluid, .navbar{
     background-color: #121360;
 }
-.active{
-    border:1px solid  white;
-}
 .navbar .navbar-nav{
     display: flex;
     justify-content: space-around;
     width: 60%;
  }
-.navbar li a{
-    color: white;
-}
+ .navbar .nav-item a{
+     color: white;
+ }

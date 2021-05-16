@@ -15,18 +15,18 @@
           <a class="nav-link" routerLink="about" routerLinkActive="active">NOSOTROS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="servicios" routerLinkActive="active" tabindex="-1" aria-disabled="true">MASCOTAS</a>
+          <a class="nav-link" routerLink="servicios" routerLinkActive="active" tabindex="-1" aria-disabled="true">GALERIA</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="blog" routerLinkActive="active" tabindex="-1" aria-disabled="true">BLOG</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">CONTACTO</a>
+          <a class="nav-link" routerLink='contacto' routerLinkActive="active">CONTACTO</a>
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search"  (keyup)="buscarTermino(buscarTexto.value)"  #buscarTexto placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" (click)="buscarTermino(buscarTexto.value)"  type="submit">Search</button>
       </form>
     </div>
   </div>

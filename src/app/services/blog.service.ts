@@ -7,6 +7,21 @@ export class BlogService {
 
     private blog: Blog[] = [
         {
+            imagen: 'assets/img/dog-2612083_640.jpg',
+            titulo: 'El Labrador',
+            autor: 'Marco Islas',
+        },
+        {
+            imagen: 'assets/img/bird-4887736_640.jpg',
+            titulo: 'Guacamaya Azul',
+            autor: 'Marco Islas',
+        },
+        {
+            imagen: 'assets/img/cats-205606_1280.jpg',
+            titulo: 'Los Gatos Domesticos',
+            autor: 'Marco Islas',
+        },
+        {
             imagen: 'assets/img/mascotasImg/cat-2934720_640.jpg',
             titulo: 'Gato sentado',
             autor: 'Marco Islas',

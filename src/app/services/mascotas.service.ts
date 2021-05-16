@@ -30,6 +30,19 @@ export class MascotasService {
     getMascotas(){
         return this.mascotas;
     }
+    buscarTermino( termino: string): Mascotas[]{
+        const mascotaArr: Mascotas [] = [];
+        termino = termino.toLowerCase();
+
+        for( const mascota of this.mascotas) {
+            const titulo = mascota.titulo.toLowerCase();
+
+            if( titulo.indexOf( termino ) >= 0 ){
+                mascotaArr.push(mascota);
+            }
+        }
+        return mascotaArr;
+    }
 }
 
     export interface Mascotas{

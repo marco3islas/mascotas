@@ -14,8 +14,6 @@ export class BlogComponent implements OnInit {
   constructor( private blogService: BlogService,
                private router: Router
             ) { }
-     
-
   ngOnInit(): void {
       this.blog = this.blogService.getBlog();
   }
