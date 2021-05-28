@@ -42,6 +42,14 @@
 .grid .side-right{
     flex: 0 0 40%;
 }
+@media only screen and (max-width: 380px){
+    .grid{
+        width: 100%;
+        padding: 8px 20px;
+        flex-direction: column;
+        border: 3px solid red;
+    }
+}
 .side-right .entrada .entradaBody{
     display: flex;
     justify-content: space-between;

@@ -40,3 +40,13 @@
     color: #8c8c8c;
     text-align: center;
 }
+@media only screen and (max-width: 380px){
+    .container-fluid .redes .redesLogos{
+        justify-content: center;
+        margin: 8px;
+    }
+    .allRights{
+        max-width: 100%;
+        width: 360px;
+    }
+}
